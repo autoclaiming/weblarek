@@ -1,3 +1,5 @@
+import './scss/styles.scss';
+
 import { ShopApi } from './components/models/ApiShop';
 import { Buyer } from './components/models/Buyer';
 import { Cart } from './components/models/Cart';
@@ -9,6 +11,8 @@ import { Api } from './components/base/Api';
 const products = new Products();
 const cart = new Cart();
 const buyer = new Buyer('', '', '', ''); // Пустые начальные значения
+const apiInstance = new Api(API_URL);
+const shopApi = new ShopApi(apiInstance);
 
 function testingProducts() {
 
@@ -59,8 +63,6 @@ function testingBuyer() {
 }
 
 function testingAPI() {
-    const apiInstance = new Api(API_URL);
-    const shopApi = new ShopApi(apiInstance);
     shopApi.getProducts()
         .then(response => {
             console.log("Ответ от сервера:", response);
