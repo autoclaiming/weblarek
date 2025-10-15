@@ -147,8 +147,11 @@ interface IBuyer {
 Пояснение полей:
 
 `payment: TPayment` - информация о способе оплаты. cash или online. 
+
 `email: string` - электронная почта покупателя для связи и отправки уведомлений о заказе
+
 `phone: string` - номер телефона покупателя для связи и подтверждения заказа
+
 `address: string` - адрес доставки заказа, куда будет отправлен товар
 
 ### Модели данных
@@ -168,9 +171,13 @@ interface IBuyer {
 Методы:
 
 `getProducts(): IProduct[]` - возвращает массив всех товаров
+
 `setProducts(products: IProduct[]): void` - сохраняет массив товаров
+
 `getCard(): IProduct | null` - возвращает выбранный товар
+
 `setCard(product: IProduct): void` - сохраняет товар для подробного отображения
+
 `getProductById(id: string): IProduct | null` - возвращает товар по ID
 
 #### Класс Cart (Корзина)
@@ -186,12 +193,19 @@ interface IBuyer {
 Методы:
 
 `getProductsList(): IProduct[]` - возвращает массив товаров в корзине
+
 `addProduct(product: IProduct): void` - добавляет товар в корзину
+
 `deleteProduct(id: string): void` - удаляет товар из корзины по ID
+
 `clearCart(): void` - очищает корзину
+
 `getTotalPrice(): number` - возвращает количество товаров в корзине
+
 `getProductsValue(): number` - возвращает общую стоимость товаров
+
 `getQuanity(): number` - возвращает количество товаров в корзине
+
 `contains(id: string): boolean` - проверяет наличие товара по ID
 
 #### Класс Buyer (Покупатель)
@@ -203,15 +217,21 @@ interface IBuyer {
 Поля:
 
 `payment: TPayment` - способ оплаты
+
 `address: string` - адрес доставки
+
 `email: string` - email покупателя
+
 `phone: string` - телефон покупателя
 
 Методы:
 
 `setData(info: IBuyer): void` - сохраняет данные покупателя
+
 `getData(): IBuyer` - возвращает все данные покупателя
+
 `clearData(): void` - очищает данные покупателя
+
 `validateData(): boolean` - валидирует данные и возвращает результат проверки
 
 ### Слой коммуникации
@@ -229,4 +249,5 @@ interface IBuyer {
 Методы:
 
 `getProducts(): Promise<IOrderRequest>` - получает список товаров с сервера
+
 `postResponse(order: IOrderRequest): Promise<IOrderResult>` - отправляет данные заказа на сервер
