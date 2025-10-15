@@ -157,11 +157,11 @@ interface IBuyer {
 Назначение: управляет товарами в корзине покупок.
 
 Конструктор:
-constructor() - не принимает параметров
+`constructor()` - не принимает параметров
 
 Поля:
 
-products: IProduct[] - массив товаров в корзине
+`products: IProduct[]` - массив товаров в корзине
 
 Методы:
 
@@ -185,7 +185,7 @@ products: IProduct[] - массив товаров в корзине
 Назначение: хранит и валидирует данные покупателя.
 
 Конструктор:
-constructor(payment: TPayment, address: string, email: string, phone: string) - принимает начальные данные покупателя
+`constructor(payment: TPayment, address: string, email: string, phone: string)` - принимает начальные данные покупателя
 
 Поля:
 
